@@ -34,12 +34,12 @@ Explore este sistema para simplificar e aprimorar o acompanhamento das atividade
 
 1. **Clone o Repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/lukaulk/swc-tfc-esc-ippa.git
    ```
 
 2. **Instale as Dependências:**
    ```bash
-   cd nome-do-repositorio
+   cd swc-tfc-esc-ippa
    npm install
    ```
 
