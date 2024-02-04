@@ -2,6 +2,16 @@
 
 Bem-vindo ao repositório do Sistema Web para Controle e Acompanhamento de Trabalhos de Conclusão de Curso (TFCs) e Estágio Curricular! Este projeto utiliza tecnologias modernas para oferecer uma plataforma eficiente e amigável para gerenciar as atividades acadêmicas.
 
+Sistema Web desenvolvido para facilitar o gerenciamento de Trabalhos de Conclusão de Curso (TFCs) e Estágio Curricular em instituições acadêmicas. Utilizando Next.js como framework principal, Shadcn-ui para estilização, Prisma para integração eficiente com o banco de dados e o template Tabler para uma interface intuitiva.
+
+## Principais Funcionalidades 📋
+
+- Gestão completa de TFCs, desde a proposta até a apresentação final.
+- Controle eficaz das atividades e avaliações de Estágio Curricular.
+- Integração otimizada com o banco de dados através do Prisma.
+
+Explore este sistema para simplificar e aprimorar o acompanhamento das atividades acadêmicas! 🎓✨
+
 ## Tecnologias Utilizadas 🛠️
 
 - **Next.js:** O framework React para desenvolvimento de aplicações web modernas, oferecendo alta performance e facilidade de escalabilidade.
