@@ -1,37 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Controle e Acompanhamento de TFCs e Estágio Curricular 🚀
 
-## Getting Started
+Bem-vindo ao repositório do Sistema Web para Controle e Acompanhamento de Trabalhos de Conclusão de Curso (TFCs) e Estágio Curricular! Este projeto utiliza tecnologias modernas para oferecer uma plataforma eficiente e amigável para gerenciar as atividades acadêmicas.
 
-First, run the development server:
+## Tecnologias Utilizadas 🛠️
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js:** O framework React para desenvolvimento de aplicações web modernas, oferecendo alta performance e facilidade de escalabilidade.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Shadcn-ui:** Uma biblioteca de componentes estilizados para React, proporcionando uma interface visualmente atraente e consistente.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Prisma:** ORM (Object-Relational Mapping) para Node.js e TypeScript, facilitando o acesso e manipulação do banco de dados.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Tabler:** Um template de painel de controle responsivo e fácil de usar, agilizando o desenvolvimento da interface do usuário.
 
-## Learn More
+## Funcionalidades Principais 📋
 
-To learn more about Next.js, take a look at the following resources:
+- **Gestão de TFCs:** Acompanhe o progresso dos Trabalhos de Conclusão de Curso, desde a proposta até a apresentação final.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Controle de Estágios Curriculares:** Gerencie as atividades dos estagiários, avaliações e relatórios de estágio.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Integração com Prisma:** Utilize o Prisma para uma comunicação eficiente com o banco de dados, garantindo consistência e segurança nas operações.
 
-## Deploy on Vercel
+## Como Iniciar 🚦
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone o Repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-"# swc-tfc-esc-ippa" 
+2. **Instale as Dependências:**
+   ```bash
+   cd nome-do-repositorio
+   npm install
+   ```
+
+3. **Configure o Ambiente:**
+   - Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente necessárias.
+
+4. **Execute a Aplicação:**
+   ```bash
+   npm run dev
+   ```
+
+   Acesse [http://localhost:3000](http://localhost:3000) para visualizar o sistema.
+
+## Contribuições e Problemas 🤝
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) e enviar pull requests.
+
+## Licença 📄
+
+Este projeto é licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+Aproveite o Controle e Acompanhamento de TFCs e Estágio Curricular! 🎓✨
