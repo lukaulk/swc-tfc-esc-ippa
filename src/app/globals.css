@@ -2,3 +2,22 @@
 @tailwind components;
 @tailwind utilities;
  
+* {
+    /* transition: .3s all ease-in-out; */
+}
+ input:focus{
+    @apply border-gray-600 border-2 
+}
+
+.bg-gray-50{
+    background: #fff !important;
+}
+.bg-gray-100{
+    background: #fafafa !important;
+}
+.border-gray-200{
+    border-color: #f5f5f5 !important;
+}
+.rounded-md{
+    border-radius: 5px;
+}

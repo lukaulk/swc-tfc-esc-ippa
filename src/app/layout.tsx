@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Nav from '@/components/myui/Nav'
 import "./globals.css";
 
-// import { Inter } from "next/font/google";
-// const inter = Inter({ subsets: ["latin"] });
+import { Open_Sans, } from "next/font/google";
+
+const open_sans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Acompanhar e Controlar Estágios e TFCs",
@@ -16,7 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body >{children}</body>
+      <body className={open_sans.className}>
+      <div className="flex flex-row w-full h-screen">
+      <Nav></Nav>
+      {children}
+      </div>
+        </body>
     </html>
   );
 }
