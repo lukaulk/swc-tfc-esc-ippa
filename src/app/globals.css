@@ -3,7 +3,11 @@
 @tailwind utilities;
  
 * {
+    user-select: none;
     /* transition: .3s all ease-in-out; */
+}
+input::placeholder, *::placeholder{
+    @apply text-slate-500 
 }
  input:focus{
     @apply border-gray-600 border-2 

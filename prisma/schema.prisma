@@ -10,8 +10,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// BANCO DE DADOS 
+// *** LOGIN E ACESSO *** //
+
 model Login {
-      id_login Int @id @default(autoincrement())
-      usuario String @db.Char(200) @unique
-      senha String @db.VarChar(200)
+      id_login Int    @id @default(autoincrement())
+      usuario  String @db.Char(200) @unique
+      senha    String @db.VarChar(200)
 }

@@ -31,7 +31,7 @@ import {
 export default function Header(props: HProps) {
   return (
     <div className="flex flex-row w-full justify-between items-center bg-white border rounded-lg border-l-0  border-zinc-300 h-16 min-h-15 text-gray-950">
-      <h1 className="text-md text-emerald-700 ml-4 font-bold uppercase">
+      <h1 className="text-md text-blue-500 ml-6 font-semibold ">
         {props.content ? props.content : "Nome da Seção"}
       </h1>
 
@@ -39,7 +39,7 @@ export default function Header(props: HProps) {
         <PopoverTrigger asChild>
           <div className="flex h-full px-4 text-sm font-semibold hover:bg-zinc-50 items-center gap-3 cursor-pointer">
             <span>{props.name ? props.name : "Lukau Lk"}</span>
-            <Avatar className="w-8 h-8  border ring-2 ring-emerald-300 border-white ">
+            <Avatar className="w-8 h-8  border ring-2 ring-blue-300 border-white ">
               <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback >TM</AvatarFallback>
             </Avatar>
@@ -56,7 +56,7 @@ export default function Header(props: HProps) {
                 <br />
                 <br />
                 <DialogDescription className="flex flex-col items-center justify-center">
-                  <Avatar className="w-24 h-24 border ring-2 ring-emerald-300 border-white ">
+                  <Avatar className="w-24 h-24 border ring-2 ring-blue-300 border-white ">
                     <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
                     <AvatarFallback >TM</AvatarFallback>
                   </Avatar>
