@@ -46,7 +46,7 @@ var banca = [
         <div className="flex flex-row w-full h-screen">
             <Nav></Nav>
             <div className="flex-1 flex flex-col h-screen bg-gray-100">
-                <Header content="Bancas" name="Tomás Lukas" />
+                <Header content="Bancas"  />
 
                 <section className="w-full max-w-[1200px]  bg-gray-50 border  mt-1 border-l-0 border-indigo-600 h-screen  text-gray-950">
 

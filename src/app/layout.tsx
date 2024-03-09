@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={open_sans.className}>
       <div className="flex flex-row w-full h-screen">
-      <Nav></Nav>
+      {/* <Nav></Nav> */}
       {children}
       </div>
         </body>

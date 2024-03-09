@@ -27,7 +27,7 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import { IconCursorText, IconDots, IconFilter, IconPlus, IconSearch, IconX } from "@tabler/icons-react"
+import { IconCursorText, IconDots, IconPlus, IconSearch, IconX } from "@tabler/icons-react"
 
 import { ScrollArea } from "@/components/ui/scroll-area"
 
@@ -35,12 +35,8 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 
-import { useRouter } from 'next/router';
 
 export default function Departamentos() {
-    const router = useRouter();
-    const { conta } = router.query;
-   
     var departs = [
         { id: 1, nome: 'Engenharia Informática', info: 'Lorem Ipsum dolor sit' },
         { id: 2, nome: 'Gestão Informática', info: 'Lorem Ipsum dolor sit' },
@@ -55,7 +51,7 @@ export default function Departamentos() {
         <div className="flex flex-row w-full h-screen">
             <Nav></Nav>
             <div className="flex-1 flex flex-col h-screen bg-gray-100">
-                <Header content="Departamentos" name={String(conta)} />
+                <Header content="Departamentos"  />
 
                 <section className="w-full max-w-[1200px]  bg-gray-50 border  mt-1 border-l-0 border-indigo-600 h-screen  text-gray-950">
 
@@ -138,7 +134,6 @@ export default function Departamentos() {
                             </TableFooter>
                         </Table>
                     </ScrollArea>
-
                 </section>
             </div>
         </div>

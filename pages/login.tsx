@@ -25,76 +25,80 @@ import {
 } from "@/components/ui/tabs"
 
 import "@/app/globals.css"
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-
 import { IconAlertTriangle } from "@tabler/icons-react";
-import { LoginSchema, createUser, findUser, LoginProps, ErrorType } from './../utils/loginAuth';
+import { useRouter } from 'next/router'
+import { useEffect } from 'react';
+import { useSession, startSession, LoginSchema, SignupSchema, createUser, findUser, ErrorType } from './../utils/loginAuth';
 
-const Login = ({ login }: LoginProps) => {
-    
-    const router = useRouter();
+const Login = () => {
+    const router = useRouter()
+
     const [msg, setMsg] = useState({ message: '' })
     const [loginData, setLoginData] = useState({ usuario: '', senha: '' });
     const [signupData, setSignupData] = useState({ usuario: '', senha: '', conf_senha: '' });
     const [error, setError] = useState<ErrorType | null>(null);
     
-    const redirectTo = (url:string) =>{
-        router.push(url);
-    }
-    const LoginSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
-
-        try {
-            LoginSchema.parse(loginData);
-            const data =  await findUser(loginData.usuario, loginData.senha)
-            if(data.sucess == false || data.error){
+    const useSignUp = async () =>{
+        try{
+            SignupSchema.parse(signupData)
+            const data = await createUser(signupData.usuario, signupData.senha)
+            if (data.sucess == false || data.error) {
                 setMsg({
                     message: data.error
                 })
-            } 
-           redirectTo(`/departamentos?conta=${data.data.usuario}`)
-
-        } catch (error: any) {
-            setError({ message: error.message, errors: error.errors });
-            try{
+            }
+            startSession(data.data.usuario) ?  router.push("departamentos/#session_started") : router.push("login/#session_error") 
+        } catch(error: any){
+            try {
                 setMsg({
-                    message: JSON.parse(error)[0].message 
-                 })
-            } catch (err){
+                    message: JSON.parse(error)[0].message
+                })
+            } catch (err) {
                 console.log(error)
             }
-           
         }
+    }
+    const useLogin = async () =>{
+        try {
+            LoginSchema.parse(loginData);
+            const data = await findUser(loginData.usuario, loginData.senha)
+            if (data.sucess == false || data.error) {
+                setMsg({
+                    message: data.error
+                })
+            }
+            startSession(data.data.usuario) ?  router.push("departamentos/#session_started") : router.push("departamentos/#session_error") 
+                     
+        } catch (error: any) {
+            setError({ message: error.message, errors: error.errors });
+            try {
+                setMsg({
+                    message: JSON.parse(error)[0].message
+                })
+            } catch (err) {
+                console.log(error)
+            }
+        }
+    }
+
+    useEffect(() => {
+        var session = useSession()
+
+        if(session){
+            router.push("departamentos/#session_started")
+        } else {
+            router.push("login/")
+        }
+      }, []);
+
+    const LoginSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        await useLogin()
     };
 
     const SignupSubmit = async (e: FormEvent<HTMLFormElement>) => {
-         e.preventDefault();
-        // try {
-        //     SignupSchema.parse(signupData);
-        //     if (signupData.senha !== signupData.conf_senha) {
-        //         setMsg({
-        //             message: "As senhas não coincidem"
-        //         })
-        //     }
-        //     const existingUser = await findUser(1);
-        //     if (existingUser) {
-        //         setMsg({
-        //             message: "Já existe este usuário, tente outro"
-        //         })
-        //     }
-        //     await createUser(signupData.usuario, signupData.senha)
-
-        // } catch (error: any) {
-        //     setError({ message: error.message });
-        //     console.log(error)
-
-        //     setMsg({
-        //         message: "Erro ao criar a conta!"
-        //     })
-
-        // }
+        e.preventDefault();
+       await useSignUp()
     };
 
     const inputMudado_Login = (e: ChangeEvent<HTMLInputElement>) => {
@@ -109,7 +113,7 @@ const Login = ({ login }: LoginProps) => {
         <div className="w-full flex items-center justify-center absolute h-screen shadow-lg">
             <div>
                 {msg.message.trim() !== "" ? (
-                    <Alert className="mb-4 w-full max-w-[350px] text-red-700">
+                    <Alert className="mb-4  w-full max-w-[350px] text-red-700">
                         <IconAlertTriangle className="w-4 h-4" />
                         <AlertDescription className="font-semibold">
                             {msg.message}

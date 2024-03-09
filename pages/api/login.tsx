@@ -2,8 +2,6 @@ import prisma from "../../utils/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-   
-   
     if (req.method === 'POST') {
         const { usuario, senha } = req.body;
         try {

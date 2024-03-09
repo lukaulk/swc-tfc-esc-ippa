@@ -13,8 +13,54 @@ datasource db {
 // BANCO DE DADOS 
 // *** LOGIN E ACESSO *** //
 
+// Definição do modelo Login
 model Login {
-      id_login Int    @id @default(autoincrement())
-      usuario  String @db.Char(200) @unique
-      senha    String @db.VarChar(200)
+  id_login Int    @id @default(autoincrement())
+  usuario  String @db.Char(200) @unique
+  senha    String @db.VarChar(200)
+
+  // RELAÇÕES
 }
+
+// Definição do modelo "Departamento"
+model Departamento {
+  id Int @id @default(autoincrement())
+  nome String @db.VarChar(200)
+  descricao String @db.VarChar(500)
+  logado String @db.VarChar(500)
+}
+
+// Definição do modelo "Aluno"
+model Aluno {
+  id Int @id @default(autoincrement())
+  nome String @db.VarChar(200)
+  curso String @db.VarChar(500)
+  telefone Int 
+  bi String @db.VarChar(200)
+}
+
+// Definição do modelo "Professor"
+model Professor {
+  id Int @id @default(autoincrement())
+  nome String @db.VarChar(200)
+  disciplina String @db.VarChar(200)
+}
+
+// Definição do modelo "Monografia"
+model Monografia {
+  id Int @id @default(autoincrement())
+  titulo  String @db.VarChar(500)
+  aluno String @db.VarChar(200)
+  orientador String @db.VarChar(200)
+  data_entrega String @db.VarChar(200)
+}
+
+// Definição do modelo "Estagio"
+model Estagio {
+  id Int @id @default(autoincrement())
+  data_inicio String @db.VarChar(200)
+  data_fim String @db.VarChar(200)
+  duracao Int 
+  estado String @db.VarChar(200)
+}
+
